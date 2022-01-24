@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# First, install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Next, symlink all files present in the root directory to their proper place
+ln -s ../git/config ~/.gitconfig
+ln -s ../git/config.local ~/.gitconfig.local
+ln -s ../git/ignore ~/.gitignore
+ln -s ../git/message ~/.gitmessage
+
+ln -s ../bash/bash_profile ~/.bash_profile
+ln -s ../bash/bashrc ~/.bashrc
+ln -s ../bash/bashrc.local ~/.bashrc.local
+ln -s ../bash/bash_aliases ~/.bash_aliases
+ln -s ../bash/bash_exports ~/.bash_exports
+ln -s ../zsh/zshrc ~/.zshrc
+
+# Finally, install libraries and programs present in the Brewfile
+brew bundle --file ../Brewfile

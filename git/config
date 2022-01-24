@@ -1,0 +1,26 @@
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  editor = nvim
+  fileMode = false
+[merge]
+  ff = only
+  conflictstyle = merge
+[commit]
+  template = ~/.gitmessage
+  gpgsign = true
+[fetch]
+  prune = true
+[include]
+  path = ~/.gitconfig.local
+[gpg]
+  program = gpg
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true

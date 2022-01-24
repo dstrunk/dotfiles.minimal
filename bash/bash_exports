@@ -1,0 +1,32 @@
+# General exports
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cask/bin:$PATH"
+
+# Homebrew's sbin
+export PATH="/usr/local/sbin:$PATH"
+
+# ensure_tmux_is_running
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+
+# Change npm default directory
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Allow npm executables from development dependencies
+export PATH="./node_modules/.bin:$PATH"
+
+# Postgres app for OS X
+if [ -d /Applications/Postgres.app/ ]; then
+  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+fi
+
+# Use `nvm` to manage node versions:
+# https://github.com/creationix/nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# GPG
+export GPG_TTY=$(tty)
