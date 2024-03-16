@@ -1,6 +1,3 @@
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
-
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
@@ -11,18 +8,6 @@ export EDITOR="nvim"
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
-
-# Pretty bash prompt (based on mdo's):
-# https://github.com/mdo/config/blob/master/.bash_profile#L1-L13)
-# Get the Git branch
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Custom bash prompt
-# Includes custom character for the prompt, path, and Git branch name.
-# Source: kirsle.net/wizards/ps1.html
-export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]λ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
 
 # Colors
 export CLICOLOR=1

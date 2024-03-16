@@ -17,11 +17,6 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # Allow npm executables from development dependencies
 export PATH="./node_modules/.bin:$PATH"
 
-# Postgres app for OS X
-if [ -d /Applications/Postgres.app/ ]; then
-  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-fi
-
 # Use `nvm` to manage node versions:
 # https://github.com/creationix/nvm
 export NVM_DIR="$HOME/.nvm"

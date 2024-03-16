@@ -4,7 +4,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~/'
 alias ls='ls -a'
-alias n98='n98-magerun'
 alias g='git'
 alias vim='nvim'
 alias vi='nvim'
@@ -17,7 +16,3 @@ git() {
   fi
   command git "$@"
 }
-
-# hub
-# brew install hub
-eval "$(hub alias -s)"

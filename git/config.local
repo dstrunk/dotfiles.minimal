@@ -1,9 +1,12 @@
+[user]
+  name = Daniel Strunk
+  email = daniel@strunk.me
+[color]
+  ui = true
 [filter "media"]
   required = true
   clean = git media clean %f
   smudge = git media smudge %f
-[color]
-  ui = true
 [commit]
   gpgsign = true
 [alias]
@@ -29,3 +32,5 @@
   st = status
   up = !git fetch origin && git rebase origin/master
   shown = !sh -c 'git show --pretty="format:" --name-only $1'
+[includeIf "gitdir:~/Code/PHP/promenade"]
+  path = ~/Code/PHP/promenade/.gitconfig
