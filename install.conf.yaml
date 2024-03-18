@@ -28,10 +28,6 @@
         path: git/message
         create: true
         relink: true
-    ~/.git_template:
-        path: git/git_template
-        create: true
-        relink: true
     ~/.bash_profile:
         path: bash/bash_profile
         create: true
@@ -64,24 +60,8 @@
         path: bash/bash_aliases
         create: true
         relink: true
-    ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme:
-        path: zsh/themes/agnoster.zsh-theme
-        create: true
-        relink: true
-    ~/.oh-my-zsh/custom/02-ssh.zsh:
-        path: zsh/custom/ssh
-        create: true
-        relink: true
-    ~/.oh-my-zsh/custom/03-rand.zsh:
-        path: zsh/custom/rand
-        create: true
-        relink: true
     ~/.bin:
         path: bin/
-        create: true
-        relink: true
-    ~/.ctags:
-        path: ctags/ctags
         create: true
         relink: true
     ~/.asdfrc:
@@ -90,10 +70,6 @@
         relink: true
     ~/.editorconfig:
         path: editorconfig
-        create: true
-        relink: true
-    ~/.tern-config:
-        path: language-servers/javascript/tern-config
         create: true
         relink: true
 
