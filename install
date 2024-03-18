@@ -1,25 +1,15 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# First, install Homebrew
-if [[ $(command -v brew) == '' ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+set -e
 
-# Next, symlink all files present in the root directory to their proper place
-ln -s "$PWD/git/config" "$HOME/.gitconfig"
-ln -s "$PWD/git/config.local" "$HOME/.gitconfig.local"
-ln -s "$PWD/git/ignore" "$HOME/.gitignore"
-ln -s "$PWD/git/message" "$HOME/.gitmessage"
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="dotbot"
 
-ln -s "$PWD/bash/bash_profile" "$HOME/.bash_profile"
-ln -s "$PWD/bash/bashrc" "$HOME/.bashrc"
-ln -s "$PWD/bash/bashrc.local" "$HOME/.bashrc.local"
-ln -s "$PWD/bash/bash_aliases" "$HOME/.bash_aliases"
-ln -s "$PWD/bash/bash_exports" "$HOME/.bash_exports"
-ln -s "$PWD/zsh/zshrc" "$HOME/.zshrc"
-ln -s "$PWD/nvim" "$HOME/.config/nvim"
-ln -s "$PWD/bin" "$HOME/.bin"
-ln -s "$PWD/tmux/tmux.conf" "$HOME/.tmux.conf"
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Finally, install libraries and programs present in the Brewfile
-# brew bundle --file ../Brewfile
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

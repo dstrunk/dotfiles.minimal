@@ -30,26 +30,6 @@ Plug 'benmills/vimux'
 Plug 'tpope/vim-commentary'
 Plug 'vim-vdebug/vdebug'
 Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-  \   'javascript',
-  \   'typescript',
-  \   'css',
-  \   'less',
-  \   'scss',
-  \   'json',
-  \   'graphql',
-  \   'markdown',
-  \   'vue',
-  \   'php',
-  \   'html',
-  \ ] }
-
-" PHP
-Plug 'phpactor/phpactor', { 'do': 'composer install', 'for': 'php' }
-Plug 'noahfrederick/vim-laravel'
 
 " JavaScript
 Plug 'leafgarland/typescript-vim'

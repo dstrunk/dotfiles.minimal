@@ -1,0 +1,106 @@
+- defaults:
+  link:
+
+- clean: ['~']
+
+- link:
+    ~/.config/nvim:
+        path: nvim/
+        create: true
+        relink: true
+    ~/.tmux.conf:
+        path: tmux/tmux.conf
+        create: true
+        relink: true
+    ~/.gitconfig:
+        path: git/config
+        create: true
+        relink: true
+    ~/.gitconfig.local:
+        path: git/config.local
+        create: true
+        relink: true
+    ~/.gitignore:
+        path: git/ignore
+        create: true
+        relink: true
+    ~/.gitmessage:
+        path: git/message
+        create: true
+        relink: true
+    ~/.git_template:
+        path: git/git_template
+        create: true
+        relink: true
+    ~/.bash_profile:
+        path: bash/bash_profile
+        create: true
+        relink: true
+    ~/.bashrc:
+        path: bash/bashrc
+        create: true
+        relink: true
+    ~/.bashrc.local:
+        path: bash/bashrc.local
+        create: true
+        relink: true
+    ~/.bash_aliases:
+        path: bash/bash_aliases
+        create: true
+        relink: true
+    ~/.bash_exports:
+        path: bash/bash_exports
+        create: true
+        relink: true
+    ~/.zshrc:
+        path: zsh/zshrc
+        create: true
+        relink: true
+    ~/.oh-my-zsh/custom/00-exports.zsh:
+        path: bash/bash_exports
+        create: true
+        relink: true
+    ~/.oh-my-zsh/custom/01-aliases.zsh:
+        path: bash/bash_aliases
+        create: true
+        relink: true
+    ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme:
+        path: zsh/themes/agnoster.zsh-theme
+        create: true
+        relink: true
+    ~/.oh-my-zsh/custom/02-ssh.zsh:
+        path: zsh/custom/ssh
+        create: true
+        relink: true
+    ~/.oh-my-zsh/custom/03-rand.zsh:
+        path: zsh/custom/rand
+        create: true
+        relink: true
+    ~/.bin:
+        path: bin/
+        create: true
+        relink: true
+    ~/.ctags:
+        path: ctags/ctags
+        create: true
+        relink: true
+    ~/.asdfrc:
+        path: asdf/asdfrc
+        create: true
+        relink: true
+    ~/.editorconfig:
+        path: editorconfig
+        create: true
+        relink: true
+    ~/.tern-config:
+        path: language-servers/javascript/tern-config
+        create: true
+        relink: true
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [git config --global init.templatedir '~/.git_template', Adding git template]
+    - . $(pwd)/powerline/fonts/install.sh
+    - rm -rf $HOME/.asdf && git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.2.0
+    - tic -x tmux/tmux-256color.terminfo
+    - brew bundle
