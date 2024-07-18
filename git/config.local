@@ -32,5 +32,5 @@
   st = status
   up = !git fetch origin && git rebase origin/master
   shown = !sh -c 'git show --pretty="format:" --name-only $1'
-[includeIf "gitdir:~/Code/PHP/promenade"]
-  path = ~/Code/PHP/promenade/.gitconfig
+[includeIf "gitdir:~/Library/Mobile Documents/com~apple~CloudDocs/Code/promenade/"]
+  path = ~/Library/Mobile Documents/com~apple~CloudDocs/Code/promenade/.gitconfig

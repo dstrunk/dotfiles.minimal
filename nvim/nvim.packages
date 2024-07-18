@@ -9,6 +9,7 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
 " Git
 Plug 'tpope/vim-fugitive'

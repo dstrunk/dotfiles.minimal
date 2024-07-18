@@ -1,13 +1,9 @@
-- defaults:
-  link:
-
-- clean: ['~']
-
 - link:
     ~/.config/nvim:
-        path: nvim/
+        path: nvim/**
         create: true
         relink: true
+        glob: true
     ~/.tmux.conf:
         path: tmux/tmux.conf
         create: true
@@ -76,7 +72,6 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [git config --global init.templatedir '~/.git_template', Adding git template]
-    - . $(pwd)/powerline/fonts/install.sh
     - rm -rf $HOME/.asdf && git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.2.0
     - tic -x tmux/tmux-256color.terminfo
-    - brew bundle
+    - # brew bundle
