@@ -68,6 +68,11 @@
         path: editorconfig
         create: true
         relink: true
+    ~/.claude:
+        path: claude/**
+        create: true
+        relink: true
+        glob: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

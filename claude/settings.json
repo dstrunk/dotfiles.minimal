@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "defaultMode": "plan",
+    "allow": [
+      "Bash(docker compose:*)",
+      "Bash(fd:*)",
+      "Bash(gh:*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "Bash(tree:*)",
+      "Bash(xargs cat:*)",
+      "WebSearch"
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  }
+}
