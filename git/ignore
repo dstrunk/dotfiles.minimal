@@ -127,3 +127,7 @@ app/code/Danielstrunk/
 # Other
 config.codekit3
 *.code-workspace
+
+# Claude Code
+settings.local.json
+CLAUDE.local.md
